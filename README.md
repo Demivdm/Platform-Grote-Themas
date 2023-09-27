@@ -10,10 +10,11 @@
   * [Licentie](#licentie)
 
 ## Beschrijving
-Tijdens dit project hebben Maaike, Duneya en Demi een squadpage gemaakt voor squad A. Deze pagina is speciaal ontworpen voor het weergeven van informatie over studenten binnen de squad. Het biedt een overzichtelijke en creatieve manier om de leden van squad A te presenteren op basis van sterrenbeeld. Hierdoor krijgen anderen snel inzicht in wie er in de squad zit.
+
+Platform Grote Thema's is een toegankelijke pagina waarop docenten werkvormen kunnen bekijken. Daarnaast kunnen de docenten via de zoekbalk ook werkvormen vinden. Verder kunnen docenten zelf werkvormen met een beschrijving erbij uploaden. De website is simpel en overzichtelijk zodat de gebruiker snel kan vinden waar diegene naar opzoek is. 
 
 ## Gebruik en installatie
-Om deze Squadpage te gebruiken, volg je eenvoudig de onderstaande stappen:
+Om Platform Grote Thema's te installeren, volg je eenvoudig de onderstaande stappen:
 
 1. Clone het project naar je lokale machine:
    ```
