@@ -1,5 +1,6 @@
 # Platform Grote Thema's README
 
+Hier komt een voorbeeld van de website
 
 ## Inhoudsopgave
 
