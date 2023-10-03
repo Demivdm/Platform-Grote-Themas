@@ -13,7 +13,7 @@
     }
 
     img:first-child {
-		max-width: 10rem;
+		max-width: 8rem;
 	}
 
     a {
