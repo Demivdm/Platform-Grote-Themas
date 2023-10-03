@@ -45,13 +45,14 @@
         display: flex;
         flex-direction: column;
         margin: 2rem 2rem;
-        row-gap: 3rem;
+        gap: 3rem;
     }
 
     header {
         display: flex;
         flex-direction: column;
         row-gap: 0.5rem;
+        max-width: 20rem;
     }
 
     h1 {
@@ -68,6 +69,7 @@
         display: flex;
         flex-direction: column;
         row-gap: 2rem;
+        max-width: 30rem;
     }
 
     .form-content {
@@ -123,6 +125,7 @@
     .form-submit {
         display: flex;
         align-items: center;
+        position: relative;
     }
 
     .icon-box {
@@ -130,7 +133,7 @@
         align-items: center;
         justify-content: center;
         position: absolute;
-        left: 1rem;
+        left: -1rem;
         background: var(--color-hva-pink);
         padding: 0.5rem;
         aspect-ratio: 1/1;
@@ -152,5 +155,32 @@
         font-weight: 600;
         font-family: 'Open Sans', sans-serif;
         cursor: pointer;
+    }
+
+    @media (min-width: 48rem){
+        section {
+            flex-direction: row;
+            gap: 3rem;
+            justify-content: space-evenly;
+            margin-top: 8rem;
+        }
+
+        header {
+            justify-content: center;
+        }
+
+        form {
+            width: 30rem;
+        }
+    }
+
+    @media (min-width: 64rem){
+        header h1 {
+            font-size: 2rem;
+        }
+
+        header > p {
+            font-size: 1rem;
+        }
     }
 </style>

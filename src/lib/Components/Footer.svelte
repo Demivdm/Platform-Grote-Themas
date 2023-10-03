@@ -8,5 +8,9 @@
 		background-color: var(--color-hva-navy);
 		margin: 2rem auto 0;
 		padding: 2rem;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
 	}
 </style>
