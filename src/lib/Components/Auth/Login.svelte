@@ -10,7 +10,7 @@
         <div class="form-content">
             <!-- Email -->
             <div class="form-field">
-                <label for="email">Email</label>
+                <label for="email">Emailadres</label>
                 <input type="email" id="email" name="email" placeholder="Vul hier uw emailadres in">
             </div>
 
@@ -147,13 +147,14 @@
     @media (min-width: 48rem){
         section {
             flex-direction: row;
-            gap: 3rem;
-            justify-content: space-evenly;
-            margin-top: 8rem;
+            gap: 2rem;
+            margin: 0 auto;
+            max-width: unset;
         }
 
         header {
             justify-content: center;
+            max-width: 20rem;
         }
 
         form {
@@ -162,8 +163,12 @@
     }
 
     @media (min-width: 64rem){
+        section{
+            gap: 4rem;
+        }
+
         header h1 {
-            font-size: 2rem;
+            font-size: 3rem;
         }
 
         header > p {

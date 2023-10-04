@@ -13,4 +13,11 @@
         left: 0;
         width: 100%;
 	}
+
+    @media (min-width: 48rem) {
+        footer {
+            margin: 0 auto;
+            position: relative;
+        }
+    }
 </style>
