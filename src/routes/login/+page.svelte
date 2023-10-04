@@ -1,5 +1,15 @@
 <script>
-    import Login from "../../lib/Components/Auth/Login.svelte";
+    import Login from "$lib/Components/Auth/Login.svelte";
 </script>
 
-<Login />
+<main>
+    <Login />
+</main>
+
+<style>
+    main {
+        display: flex;
+        flex-direction: column;
+        padding: 0 2rem;
+    }
+</style>

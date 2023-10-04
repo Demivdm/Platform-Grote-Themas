@@ -14,18 +14,6 @@
                 <input type="email" id="email" name="email" placeholder="Vul hier uw emailadres in">
             </div>
 
-            <!-- Gebruikersnaam -->
-            <div class="form-field">
-                <label for="gebruikersnaam">Gebruikersnaam</label>
-                <input type="text" id="gebruikersnaam" name="gebruikersnaam" placeholder="Vul hier uw gebruikersnaam in">
-            </div>
-
-            <!-- Wachtwoord -->
-            <div class="form-field">
-                <label for="wachtwoord">Wachtwoord</label>
-                <input type="password" id="wachtwoord" name="wachtwoord" placeholder="Vul hier uw wachtwoord in">
-            </div>
-
             <!-- Al een account -->
             <p>Al een account? <a href="/login">Inloggen</a></p>
         </div>
@@ -44,15 +32,15 @@
     section {
         display: flex;
         flex-direction: column;
-        margin: 2rem 2rem;
+        margin: 6rem auto 0;
         gap: 3rem;
+        max-width: 25rem;
     }
 
     header {
         display: flex;
         flex-direction: column;
         row-gap: 0.5rem;
-        max-width: 20rem;
     }
 
     h1 {
@@ -69,7 +57,6 @@
         display: flex;
         flex-direction: column;
         row-gap: 2rem;
-        max-width: 30rem;
     }
 
     .form-content {
