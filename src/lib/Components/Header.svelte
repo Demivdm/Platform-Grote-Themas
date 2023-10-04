@@ -23,9 +23,13 @@
 
 <header>
     <div>
-        <a href="/">
-            <img src="/images/logo.svg" alt="Hogeschool van Amsterdam" />
-        </a>
+        <div class="header-wrapper">
+            <a href="/">
+                <img src="/images/logo.svg" alt="Hogeschool van Amsterdam" />
+            </a>
+
+            <span>Platform Grote Thema's</span>
+        </div>
 
         <nav>
             {#each crumbs as c, i}
@@ -36,6 +40,8 @@
                 {/if}
             {/each}
 		</nav>
+
+
     </div>
     <img src="/images/hva-triangle.svg" alt="" class="graphic">
 </header>
@@ -43,6 +49,21 @@
 <style>
     header > div {
         padding: 2rem 2rem 0;
+    }
+
+    .header-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-flow: row wrap;
+        column-gap: 1rem;
+        row-gap: 0.6rem;
+    }
+
+    span {
+        color: var(--color-hva-pink);
+        font-weight: 800;
+        font-size: 1rem;
     }
 
     img:first-child {
@@ -54,7 +75,7 @@
 	}
 
     nav {
-		padding: 1rem 0;
+		padding: 0.6rem 0 0;
         font-weight: 500;
 	}
 
@@ -64,4 +85,22 @@
 		z-index: -1;
 		max-width: 70%;
 	}
+
+    @media (min-width: 30rem){
+        span{
+            font-size: 1.2rem;
+        }
+    }
+
+    @media (min-width: 48rem){
+        span{
+            font-size: 1.8rem;
+        }
+    }
+
+    @media (min-width: 64rem){
+        span{
+            font-size: 2rem;
+        }
+    }
 </style>
