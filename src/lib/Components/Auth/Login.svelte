@@ -150,6 +150,8 @@
             gap: 2rem;
             margin: 0 auto;
             max-width: unset;
+            position: relative;
+            top: 25%;
         }
 
         header {

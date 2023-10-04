@@ -16,7 +16,7 @@
     @media (min-width: 48rem) {
         main {
             height: calc(100dvh - 9rem);
-            justify-content: center;
+            /* justify-content: center; */
         }
     }
 </style>
