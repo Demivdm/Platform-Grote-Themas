@@ -1,9 +1,10 @@
 <script>
     import Header from "../lib/Components/Header.svelte";
     import Footer from "../lib/Components/Footer.svelte";
+    import { page } from "$app/stores";
 </script>
 
-<Header />
+<Header path={$page.url.pathname}/>
 
 <slot />
 
