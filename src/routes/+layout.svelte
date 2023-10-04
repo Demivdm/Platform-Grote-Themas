@@ -5,8 +5,6 @@
 
 <Header />
 
-<main>
-    <slot />
-</main>
+<slot />
 
 <Footer />
