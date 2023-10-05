@@ -8,11 +8,11 @@
 
         let tokenPath = '';
         crumbs = tokens.map((t) => {
-            t = t.charAt(0).toUpperCase() + t.slice(1);
+            let tUpper = t.charAt(0).toUpperCase() + t.slice(1);
 
             tokenPath += '/' + t;
             return {
-                label: t,
+                label: tUpper,
                 href: tokenPath,
             };
         });
