@@ -1,3 +1,10 @@
+<script>
+    export let signInWithMagicLink
+    export let signOut
+
+    let email
+</script>
+
 <section>
     <!-- Heading -->
     <header>
@@ -6,12 +13,12 @@
     </header>
 
     <!-- Login Form -->
-    <form action="/login" on:submit|preventDefault>
+    <form action="/login" on:submit|preventDefault={signInWithMagicLink(email)}>
         <div class="form-content">
             <!-- Email -->
             <div class="form-field">
                 <label for="email">Emailadres</label>
-                <input type="email" id="email" name="email" placeholder="Vul hier uw emailadres in">
+                <input bind:value={email} type="email" id="email" name="email" placeholder="Vul hier uw emailadres in">
             </div>
 
             <!-- Nog geen account -->
@@ -26,6 +33,8 @@
             <button type="submit">Inloggen</button>
         </div>
     </form>
+
+    <button on:click={signOut}>Sign Out</button>
 </section>
 
 <style>

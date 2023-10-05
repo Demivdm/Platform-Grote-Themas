@@ -17,5 +17,9 @@
 		"svelte": "^4.0.5",
 		"vite": "^4.4.2"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@supabase/supabase-js": "^2.38.0",
+		"dotenv": "^16.3.1"
+	}
 }
