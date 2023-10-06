@@ -1,0 +1,17 @@
+
+query MyQuery {
+    homepage(where: {slug: "slug"}) {
+      werkvormenComponent {
+        ... on Werkvorm {
+          id
+          img {
+            id
+          }
+          deTag
+        }
+      }
+      werkvormenBeschrijving
+      werkvormen
+    }
+  }
+  
