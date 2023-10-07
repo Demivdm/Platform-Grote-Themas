@@ -1,24 +1,25 @@
 <body>
-<h1>Upload Formulier</h1>
+<div class="titel"><h1>Platform Grote Thema’s</h1></div>
+<h2>Upload Formulier</h2>
 <form method="POST" action="">
     <label>
-        Naam Video
+        <h3>Naam Video</h3>
         <input name="werkvorm" type="name">
     </label>
     <label>
-        Beschrijving Video
+        <h3>Beschrijving Video</h3>
         <input name="Beschrijving" type="Beschrijving">
     </label>
     <label>
-        Naam Faculteit
+       <h3>Naam Faculteit</h3>
         <input name="Faculteit" type="Faculteit">
     </label>
     <label>
-        Naam opleiding
+       <h3>Naam opleiding</h3>
         <input name="Opleiding" type="Opleiding">
     </label>
     <label>
-        Video uploaden
+        <h3>Video uploaden</h3>
     <input id="file" type="file" accept="video/mp4,video/mkv, video/x-m4v,video/*">
     </label>
     </form>
@@ -36,26 +37,34 @@
 /*    font-size: 20px;*/
 /*    background-color: coral;*/
 /*}*/
-h1{
+h1 {
+    font: ExtraBold;
+    font-size: 64px;
+margin-left: 60rem;
+    color: #F25379;
+}
+h2{
     margin-top: 10rem;
-    margin-left: 25rem;
+    margin-left: 28rem;
 }
     form {
-        max-width: 40rem;
+        max-width: 60rem;
         margin: 0 auto;
         margin-top: 5rem;
         background-color: #1E1649;
         height: 50rem;
-        padding: 3rem;
+        padding: 2rem;
     }
 label{
     margin-top: 2rem;
+    margin-bottom: 2rem;
+    font:Extrabold;
 
 }
     #file{
         height: 10rem;
         background-color: #1E1649;
-        border: solid 1 white;
+        border: solid 2 white;
     }
     label {
         display: block;
@@ -69,7 +78,7 @@ label{
         margin-bottom: 10px;
         box-sizing: border-box;
         background-color: #1E1649;
-        border: 1px solid #FFFFFF;
+        border: 2px solid #FFFFFF;
         color: #FFFFFF;
     }
 
