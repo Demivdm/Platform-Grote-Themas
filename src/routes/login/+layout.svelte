@@ -1,34 +1,30 @@
 <script>
-	import { applyAction, enhance } from '$app/forms';
-	import { invalidate } from '$app/navigation';
-	import { page } from '$app/stores';
+	import Header from '$lib/Components/Header.svelte'
+	import Footer from '$lib/Components/Footer.svelte'
+	import { invalidate } from '$app/navigation'
+	import { page } from '$app/stores'
+    import { onMount } from 'svelte';
 
-	let loading = false;
+    export let data
 
-	const handleLogout = () => {
-		loading = true;
-		return async ({ result }) => {
-			await invalidate('supabase:auth');
-			await applyAction(result);
-			loading = false;
-		};
-	};
+    $: ({ supabase, session } = data)
+
+    onMount(() => {
+        const {
+			data: { subscription }
+		} = supabase.auth.onAuthStateChange((event, _session) => {
+			if (_session?.expires_at !== session?.expires_at) {
+				invalidate('supabase:auth');
+			}
+		});
+
+		return () => subscription.unsubscribe();
+    })
 </script>
 
 <svelte:head>
 	<title>Platform Grote Thema's - Login</title>
 </svelte:head>
 
-<main class="container is-max-desktop">
-	<div class="navbar-menu my-4">
-		<div class="navbar-end">
-			{#if $page.data.session}
-				<form action="/logout" method="post" use:enhance={handleLogout}>
-					<button disabled={loading} type="submit">Sign out</button>
-				</form>
-			{/if}
-		</div>
-	</div>
+<slot />
 
-	<slot />
-</main>

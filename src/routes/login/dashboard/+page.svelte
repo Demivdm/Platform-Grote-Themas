@@ -7,11 +7,9 @@
 <section>
     <div class="block">
         <p>Ingelogde user: {user.email}</p>
-        <p>server-side fetched data with RLS:</p>
-        <pre>{JSON.stringify(testTable, null, 2)}</pre>
     </div>
     <div class="block">
-        <p>user:</p>
+        <p>User:</p>
         <pre>{JSON.stringify(user, null, 2)}</pre>
     </div>
 </section>
