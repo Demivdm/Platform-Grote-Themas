@@ -57,12 +57,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 /* -------------------------------------------------------------------------- */
 html{
     scroll-behavior: smooth;
+    height: 100%;
 }
 
 body{
     background-color: var(--color-hva-blue);
     font-family: 'Open Sans', sans-serif;
     color: var(--color-white);
+    height: 100%;
 }
 
 a{

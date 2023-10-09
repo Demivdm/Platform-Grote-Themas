@@ -1,9 +1,9 @@
 <script>
-    import Header from "$lib/Components/Header.svelte";
-    import Footer from "$lib/Components/Footer.svelte";
-    import { page } from "$app/stores";
-    import { invalidate } from '$app/navigation';
-	import { onMount } from 'svelte';
+	import Header from '$lib/Components/Header.svelte'
+	import Footer from '$lib/Components/Footer.svelte'
+	import { invalidate } from '$app/navigation'
+	import { page } from '$app/stores'
+    import { onMount } from 'svelte';
 
     export let data
 
@@ -22,8 +22,9 @@
     })
 </script>
 
-<Header path={$page.url.pathname}/>
+<svelte:head>
+	<title>Platform Grote Thema's - Login</title>
+</svelte:head>
 
 <slot />
 
-<Footer />

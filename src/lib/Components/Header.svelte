@@ -1,24 +1,24 @@
 <script>
-    export let path
+	export let path
 
-    let crumbs = [];
+	let crumbs = []
 
-    $: {
-        const tokens = path.split('/').filter((t) => t !== '');
+	$: {
+		const tokens = path.split('/').filter((t) => t !== '')
 
-        let tokenPath = '';
-        crumbs = tokens.map((t) => {
-            t = t.charAt(0).toUpperCase() + t.slice(1);
+		let tokenPath = ''
+		crumbs = tokens.map((t) => {
+			let tUpper = t.charAt(0).toUpperCase() + t.slice(1)
 
-            tokenPath += '/' + t;
-            return {
-                label: t,
-                href: tokenPath,
-            };
-        });
+			tokenPath += '/' + t
+			return {
+				label: tUpper,
+				href: tokenPath
+			}
+		})
 
-        crumbs.unshift({ label: 'Home', href: '/' });
-    }
+		crumbs.unshift({ label: 'Home', href: '/' })
+	}
 </script>
 
 <header>
@@ -31,17 +31,17 @@
             <span>Platform Grote Thema's</span>
         </div>
 
-        <nav>
-            {#each crumbs as c, i}
-                {#if i == crumbs.length-1}
-                    {c.label}
-                {:else}
-                    <a href={c.href}>{c.label}</a> &#47;&nbsp;
-                {/if}
-            {/each}
-		</nav>
-
-
+        <div class="nav-components">
+            <nav>
+                {#each crumbs as c, i}
+                    {#if i == crumbs.length-1}
+                        {c.label}
+                    {:else}
+                        <a href={c.href}>{c.label}</a> &#47;&nbsp;
+                    {/if}
+                {/each}
+            </nav>
+        </div>
     </div>
     <img src="/images/hva-triangle.svg" alt="" class="graphic">
 </header>
@@ -70,16 +70,27 @@
 		max-width: 10rem;
 	}
 
-    a {
+	img:first-child {
+		max-width: 8rem;
+	}
+
+	a {
 		text-decoration: none !important;
 	}
 
-    nav {
-		padding: 0.6rem 0 0;
-        font-weight: 500;
+	.nav-components {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
 	}
 
-    .graphic {
+	nav {
+		padding: 1rem 0;
+		font-weight: 500;
+	}
+
+	.graphic {
 		position: absolute;
 		top: 0rem;
 		z-index: -1;
