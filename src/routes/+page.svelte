@@ -1,5 +1,9 @@
 <script>
     import Button from '$lib/Components/Login/Button.svelte'
+
+    export let data
+
+    console.log(data.werkvormen);
 </script>
 
 <main>
