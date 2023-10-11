@@ -25,7 +25,7 @@ export async function load() {
 			}
 		}
 	`
-    const data = await hygraph.request(query)
+	const data = await hygraph.request(query)
 
-    return data
+	return data
 }
