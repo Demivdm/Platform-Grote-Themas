@@ -9,7 +9,7 @@
 	data.werkvormen.forEach((werkvorm) => {
 		console.log(werkvorm.title)
 	}) // Gebruik maken van variabelen in string
-	`test ${variable}`
+	// `test ${variable}`
 </script>
 
 <main>
@@ -24,11 +24,11 @@
 	{/each}
 
 	<!-- If statement in sveltekit -->
-	{#if condition == true}
+	<!-- {#if condition == true}
 		<p>Condition is true</p>
 	{:else}
 		<p>Condition is false</p>
-	{/if}
+	{/if} -->
 
 	<!-- <section class="nav-and-intro">
 		<section class="intro">
