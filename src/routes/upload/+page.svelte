@@ -3,3 +3,9 @@
 </script>
 
 <main> <Upload/> </main>
+
+<style>
+    main {
+        padding: 0 2rem;
+    }
+</style>
