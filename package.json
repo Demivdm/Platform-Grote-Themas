@@ -17,5 +17,11 @@
 		"svelte": "^4.0.5",
 		"vite": "^4.4.2"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@supabase/auth-helpers-sveltekit": "^0.10.3",
+		"@supabase/supabase-js": "^2.38.0",
+		"dotenv": "^16.3.1",
+		"graphql-request": "^6.1.0"
+	}
 }
