@@ -13,15 +13,15 @@
 </script>
 
 <main>
-	<Button />
+	
 
 	<!-- Voorbeeld for each werkvormen -->
-	{#each data.werkvormen as werkvorm}
+	<!-- {#each data.werkvormen as werkvorm}
 		<section class="card">
 			<h1>{werkvorm.title}</h1>
 			<p>{werkvorm.beschrijving}</p>
 		</section>
-	{/each}
+	{/each} -->
 
 	<!-- If statement in sveltekit -->
 	<!-- {#if condition == true}
@@ -30,7 +30,7 @@
 		<p>Condition is false</p>
 	{/if} -->
 
-	<!-- <section class="nav-and-intro">
+	 <section class="nav-and-intro">
 		<section class="intro">
 			<h2>Werkvormen en thema's</h2>
 			<p>Bekijk hier alle werkvormen en thema’s. Opzoek naar iets specifieks? Gebruik dan de zoekbalk. Of klik op één van de tags
@@ -45,14 +45,7 @@
 				<path d="M44.3964 39.9141C44.3964 39.0856 43.7248 38.4141 42.8964 38.4141C42.0679 38.4141 41.3964 39.0856 41.3964 39.9141H44.3964ZM44.3964 45.8928V39.9141H41.3964V45.8928H44.3964Z" fill="white"/>
 				</svg>
 			<button>Werkvorm uploaden</button>
-			<svg width="100" height="100" viewBox="0 0 67 67" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<rect width="47.1882" height="47.1882" transform="matrix(0.704691 -0.709514 0.70921 0.704998 0 33.4807)" fill="#F25379"/>
-				<path d="M33.9924 16.9313C33.4066 16.3456 32.4569 16.3456 31.8711 16.9313L22.3252 26.4773C21.7394 27.0631 21.7394 28.0128 22.3252 28.5986C22.9109 29.1844 23.8607 29.1844 24.4465 28.5986L32.9318 20.1133L41.417 28.5986C42.0028 29.1844 42.9526 29.1844 43.5384 28.5986C44.1242 28.0128 44.1242 27.0631 43.5384 26.4773L33.9924 16.9313ZM31.4318 38.9176C31.4318 39.746 32.1033 40.4176 32.9318 40.4176C33.7602 40.4176 34.4318 39.746 34.4318 38.9176L31.4318 38.9176ZM31.4318 17.992L31.4318 38.9176L34.4318 38.9176L34.4318 17.992L31.4318 17.992Z" fill="white"/>
-				<path d="M22.9672 45.8928H42.8963" stroke="white" stroke-width="3" stroke-linecap="round"/>
-				<path d="M24.4672 39.9141C24.4672 39.0856 23.7956 38.4141 22.9672 38.4141C22.1387 38.4141 21.4672 39.0856 21.4672 39.9141H24.4672ZM24.4672 45.8928V39.9141H21.4672V45.8928H24.4672Z" fill="white"/>
-				<path d="M44.3964 39.9141C44.3964 39.0856 43.7248 38.4141 42.8964 38.4141C42.0679 38.4141 41.3964 39.0856 41.3964 39.9141H44.3964ZM44.3964 45.8928V39.9141H41.3964V45.8928H44.3964Z" fill="white"/>
-				</svg>
-			<button>Inloggen</button>
+			<Button></Button>
 		</nav>
 
 	</section>
@@ -88,58 +81,26 @@
 		<li>Verbreden</li>
 		<li>Verdiepen</li>
 		<li>Uitwisselen</li>
-	</ul> -->
+	</ul> 
 	<!-- zoekbalk -->
-	<!-- <input type="search">
+	 <input type="search">
 	<button>Zoek</button>
 	</section>
 	<section class="werkvormen">
-		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/281px-Placeholder_view_vector.svg.png" alt="">
-		<section class="werkvorm">
-			<article>
-				<h3>Waarom is X belangrijk</h3>
-				<p>Aan het begin van een ontwerp traject is deze werkvorm in te zetten om studenten meer persoonlijk te betrekken bij het onderwerp.
 
-				</p>
-				<a href="app.html">Lees meer</a>
-				<a href="app.html">Bekijk video</a>
-			</article>
-		</section>
+			{#each data.werkvormen as werkvorm}
 		<section class="werkvorm">
-			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/281px-Placeholder_view_vector.svg.png" alt="">
-		<article>
-				<h3>Waarom is X belangrijk</h3>
-				<p>Aan het begin van een ontwerp traject is deze werkvorm in te zetten om studenten meer persoonlijk te betrekken bij het onderwerp.
+			<img src={werkvorm.thumbail} alt="">
+			<h3>{werkvorm.title}</h3>
+			<p>{werkvorm.beschrijving}</p>
 
-				</p>
-				<a href="app.html">Lees meer</a>
-				<a href="app.html">Bekijk video</a>
-			</article>
+			<a href="app.html">Lees meer</a>
+			<a href="app.html">Bekijk video</a>
 		</section>
-		<section class="werkvorm">
-			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/281px-Placeholder_view_vector.svg.png" alt="">
-		 <article>
-				<h3>Waarom is X belangrijk</h3>
-				<p>Aan het begin van een ontwerp traject is deze werkvorm in te zetten om studenten meer persoonlijk te betrekken bij het onderwerp.
-
-				</p>
-				<a href="app.html">Lees meer</a>
-				<a href="app.html">Bekijk video</a>
-			</article>
+	{/each}
 		</section>
-		<section class="werkvorm">
-			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/281px-Placeholder_view_vector.svg.png" alt="">
-		<article>
-				<h3>Waarom is X belangrijk</h3>
-				<p>Aan het begin van een ontwerp traject is deze werkvorm in te zetten om studenten meer persoonlijk te betrekken bij het onderwerp.
-
-				</p>
-				<a href="app.html">Lees meer</a>
-				<a href="app.html">Bekijk video</a>
-			</article>
-		</section>
-		<section class="werkvorm"></section>
-	</section> -->
+		
+	
 </main>
 
 <style>
