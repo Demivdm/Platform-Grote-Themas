@@ -1,10 +1,34 @@
 <script>
-    import Button from '$lib/Components/Login/Button.svelte'
+	import Button from '$lib/Components/Login/Button.svelte'
+
+	export let data
+
+	// Beschikbare data in werkvormen
+	console.log(data.werkvormen)
+
+	data.werkvormen.forEach((werkvorm) => {
+		console.log(werkvorm.title)
+	}) // Gebruik maken van variabelen in string
+	`test ${variable}`
 </script>
 
 <main>
-    <Button />
+	<Button />
 
+	<!-- Voorbeeld for each werkvormen -->
+	{#each data.werkvormen as werkvorm}
+		<section class="card">
+			<h1>{werkvorm.title}</h1>
+			<p>{werkvorm.beschrijving}</p>
+		</section>
+	{/each}
+
+	<!-- If statement in sveltekit -->
+	{#if condition == true}
+		<p>Condition is true</p>
+	{:else}
+		<p>Condition is false</p>
+	{/if}
 
 	<!-- <section class="nav-and-intro">
 		<section class="intro">
@@ -30,9 +54,9 @@
 				</svg>
 			<button>Inloggen</button>
 		</nav>
-	
+
 	</section>
-	
+
 	<section class="filter-menu">
 	<ul class="focus">
 		<li>Focus</li>
@@ -75,7 +99,7 @@
 			<article>
 				<h3>Waarom is X belangrijk</h3>
 				<p>Aan het begin van een ontwerp traject is deze werkvorm in te zetten om studenten meer persoonlijk te betrekken bij het onderwerp.
-	
+
 				</p>
 				<a href="app.html">Lees meer</a>
 				<a href="app.html">Bekijk video</a>
@@ -86,7 +110,7 @@
 		<article>
 				<h3>Waarom is X belangrijk</h3>
 				<p>Aan het begin van een ontwerp traject is deze werkvorm in te zetten om studenten meer persoonlijk te betrekken bij het onderwerp.
-					
+
 				</p>
 				<a href="app.html">Lees meer</a>
 				<a href="app.html">Bekijk video</a>
@@ -97,7 +121,7 @@
 		 <article>
 				<h3>Waarom is X belangrijk</h3>
 				<p>Aan het begin van een ontwerp traject is deze werkvorm in te zetten om studenten meer persoonlijk te betrekken bij het onderwerp.
-					
+
 				</p>
 				<a href="app.html">Lees meer</a>
 				<a href="app.html">Bekijk video</a>
@@ -108,7 +132,7 @@
 		<article>
 				<h3>Waarom is X belangrijk</h3>
 				<p>Aan het begin van een ontwerp traject is deze werkvorm in te zetten om studenten meer persoonlijk te betrekken bij het onderwerp.
-					
+
 				</p>
 				<a href="app.html">Lees meer</a>
 				<a href="app.html">Bekijk video</a>
@@ -116,78 +140,70 @@
 		</section>
 		<section class="werkvorm"></section>
 	</section> -->
-</main> 
+</main>
 
 <style>
-    main {
+	main {
 		display: flex;
 		flex-direction: column;
 		padding: 0 2rem;
 	}
-	
 
-    .nav-and-intro{
-        display: flex;
-        flex-direction: column;
-        
-    }
+	.nav-and-intro {
+		display: flex;
+		flex-direction: column;
+	}
 
-nav{
-    display: flex;
-    flex-direction: column;
-}
-    nav > button{
+	nav {
+		display: flex;
+		flex-direction: column;
+	}
+	nav > button {
+		margin: 1em 1em 1em 1.5em;
 
-        margin: 1em 1em 1em 1.5em;
+		padding: 1em;
+		background-color: #1e1649;
+		border: none;
+		color: white;
+		font-size: 2em;
+	}
+	nav > svg {
+		position: relative;
+		top: 8em;
+	}
 
-        padding:1em;
-        background-color: #1E1649;
-        border: none;
-        color: white;
-        font-size: 2em;
+	.intro {
+		margin: 2em;
+	}
+	.intro > h2 {
+		font-size: 2.8em;
+		font-weight: 900;
+		margin-bottom: 0.5em;
+	}
 
-       
-    }
-    nav > svg{
-        position: relative;
-        top: 8em;
-    }
-   
+	.intro > p {
+		font-size: 2em;
+	}
 
-    .intro{
-        margin: 2em;
-    }
-    .intro > h2{
-        font-size: 2.8em;
-        font-weight:900;
-        margin-bottom: .5em;
-    }
+	@media (min-width: 650px) {
+		.nav-and-intro > nav {
+			order: 1;
+		}
+		.nav-and-intro > .intro {
+			order: 2;
+		}
+		nav {
+			justify-content: flex-end;
+			flex-direction: row;
+		}
 
-    .intro > p{
-        font-size: 2em;
-    }
+		nav > button {
+			padding-left: 2em;
+		}
+		nav > svg {
+			position: relative;
 
-    @media(min-width:650px){
-
-        .nav-and-intro > nav{
-        order: 1;
-    }
-        .nav-and-intro > .intro{
-        order: 2;
-    }
-    nav{
-        justify-content: flex-end;
-        flex-direction: row;
-    }
-
-    nav > button{
-        padding-left: 2em;
-    }
-    nav > svg{
-        position: relative;
-        
-        inset: 2em 0 0 5.9em;
-    }
-    }
-
+			inset: 2em 0 0 5.9em;
+		}
+	}
 </style>
