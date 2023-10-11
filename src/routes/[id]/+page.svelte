@@ -26,53 +26,55 @@
         </video>
         {/if}
 
-
-
 		<article class="content">
-			<div class="beschrijving">
-				<h2>Beschrijving</h2>
-				<p>{werkvorm.beschrijving}</p>
-			</div>
+            <div class="content-left">
+                <div class="beschrijving">
+                    <h2>Beschrijving</h2>
+                    <p>{werkvorm.beschrijving}</p>
+                </div>
 
-			<div class="extra-info">
-				<div class="info-left">
-					<h3>Faculteit/Opleiding</h3>
-					<p>{werkvorm.opleiding.faculteit.titel} - {werkvorm.opleiding.titel}</p>
-				</div>
-				<div class="info-right">
-					<h3>Contactpersonen</h3>
-					{#each werkvorm.contactpersonen as contactpersoon}
-						<p>{contactpersoon.email}</p>
-					{/each}
-				</div>
-			</div>
+                <div class="extra-info">
+                    <div class="info-left">
+                        <h3>Faculteit/Opleiding</h3>
+                        <p>{werkvorm.opleiding.faculteit.titel} - {werkvorm.opleiding.titel}</p>
+                    </div>
+                    <div class="info-right">
+                        <h3>Contactpersonen</h3>
+                        {#each werkvorm.contactpersonen as contactpersoon}
+                            <p>{contactpersoon.email}</p>
+                        {/each}
+                    </div>
+                </div>
+            </div>
 
-			<div class="tags">
-				<h2>Tags</h2>
-				<div class="tag-list">
-					{#each werkvorm.tags as tag}
-						<div class="tag" style="border-color: {tag.kleur.css};">
-							<p>{tag.titel}</p>
-						</div>
-					{/each}
-				</div>
-			</div>
+            <div class="content-right">
+                <div class="action-buttons">
+                    <div class="action-button">
+                        <div class="icon-box">
+                            <img src="/images/icons/download.svg" alt="Download icon" />
+                        </div>
+                        <!-- TODO Add download link material -->
+                        <a href="/">Download materiaal</a>
+                    </div>
+                    <div class="action-button">
+                        <div class="icon-box">
+                            <img src="/images/icons/arrow-right.svg" alt="Arrow Icon" />
+                        </div>
+                        <a href="/">Terug naar overzicht</a>
+                    </div>
+                </div>
 
-            <div class="action-buttons">
-				<div class="upload-button">
-					<div class="icon-box">
-						<img src="/images/icons/download.svg" alt="Download icon" />
-					</div>
-                    <!-- TODO Add download link material -->
-					<a href="/">Download materiaal</a>
-				</div>
-				<div class="upload-button">
-					<div class="icon-box">
-						<img src="/images/icons/arrow-right.svg" alt="Arrow Icon" />
-					</div>
-					<a href="/">Terug naar overzicht</a>
-				</div>
-			</div>
+                <div class="tags">
+                    <h2>Tags</h2>
+                    <div class="tag-list">
+                        {#each werkvorm.tags as tag}
+                            <div class="tag" style="border-color: {tag.kleur.css};">
+                                <p>{tag.titel}</p>
+                            </div>
+                        {/each}
+                    </div>
+                </div>
+            </div>
 		</article>
 	</section>
 </main>
@@ -87,17 +89,25 @@
 	section {
 		display: flex;
 		flex-direction: column;
-		margin: 1rem auto 0;
+		margin: 1rem 0;
 		gap: 2rem;
-		max-width: 25rem;
 	}
 
 	.upload-button {
 		display: flex;
 		align-items: center;
 		position: relative;
-		margin: 0 1rem;
+		margin: 0 0 1rem auto;
+        max-width: 27rem;
 	}
+
+    .action-button {
+        display: flex;
+		align-items: center;
+		position: relative;
+		margin: 0 1rem;
+        max-width: 27rem;
+    }
 
 	.icon-box {
 		display: flex;
@@ -152,14 +162,22 @@
 	video {
 		width: 100%;
         border-radius: 5px;
+        max-width: 28rem;
 	}
 
     img {
         width: 100%;
         border-radius: 5px;
+        max-width: 28rem;
     }
 
     .content {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .content-left {
         display: flex;
         flex-direction: column;
         gap: 2rem;
@@ -209,6 +227,12 @@
         font-weight: 400;
     }
 
+    .content-right {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
     .tags {
         display: flex;
         flex-direction: column;
@@ -245,4 +269,64 @@
         gap: 1rem;
         position: relative;
     }
+
+    @media (min-width: 700px){
+        main{
+            padding: 0 3rem 8rem;
+        }
+
+        .content{
+            flex-direction: row;
+            gap: 3rem;
+        }
+
+        .content-left{
+            width: 55%;
+        }
+
+        .extra-info{
+            flex-direction: row;
+            gap: 2rem;
+        }
+
+        .content-right{
+            width: 45%;
+            margin-top: 3rem;
+        }
+    }
+
+    @media (min-width: 1024px){
+        section{
+            gap: 1.5rem;
+        }
+
+        header h1{
+            font-size: 1.8rem;
+        }
+
+        video{
+            max-width: 40rem;
+        }
+
+        .content {
+            margin-top: 1rem;
+        }
+
+        .content-left{
+            width: unset;
+        }
+
+        .beschrijving{
+            max-width: 35rem;
+        }
+
+        .beschrijving h2 {
+            font-size: 1.3rem;
+        }
+
+        .content-right{
+            width: unset;
+        }
+    }
+
 </style>
