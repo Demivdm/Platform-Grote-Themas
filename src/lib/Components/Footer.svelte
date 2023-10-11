@@ -7,7 +7,7 @@
 	footer {
 		background-color: var(--color-hva-navy);
 		margin: 2rem auto 0;
-		padding: 2rem;
+		padding: 1rem;
         position: fixed;
         bottom: 0;
         left: 0;

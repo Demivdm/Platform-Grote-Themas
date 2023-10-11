@@ -4,11 +4,13 @@
 	export let data
 
 	// Beschikbare data in werkvormen
-	console.log(data.werkvormen)
+	// console.log(data.werkvormen)
 
-	data.werkvormen.forEach((werkvorm) => {
-		console.log(werkvorm.title)
-	}) // Gebruik maken van variabelen in string
+	// data.werkvormen.forEach((werkvorm) => {
+	// 	console.log(werkvorm.title)
+	// })
+
+    // Gebruik maken van variabelen in string
 	// `test ${variable}`
 </script>
 
@@ -20,6 +22,7 @@
 		<section class="card">
 			<h1>{werkvorm.title}</h1>
 			<p>{werkvorm.beschrijving}</p>
+            <a href="/{werkvorm.link}">{werkvorm.link}</a>
 		</section>
 	{/each}
 
@@ -146,7 +149,7 @@
 	main {
 		display: flex;
 		flex-direction: column;
-		padding: 0 2rem;
+		padding: 0 2rem 8rem;
 	}
 
 	.nav-and-intro {
