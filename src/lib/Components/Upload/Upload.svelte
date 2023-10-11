@@ -1,5 +1,6 @@
 <!--Cambia i colori con le rispettive variabili-->
-<body>
+
+<div class="titel"><h1>Platform Grote Thema’s</h1></div>
 <div class="terug-button">
     <div class="icon-box">
         <img src="/images/icons/returnhome-icon.svg" alt="Back Icon" />
@@ -46,7 +47,6 @@
     <path d="M32.4019 62.9884L34.5326 65.8328M34.5326 65.8328L56.5733 42.7721L53.7106 36.0043L34.5326 59.065L28.3323 45.78L22.1707 50.2919L34.5326 65.8328Z" stroke="white"/>
 </svg>
 </button>
-</body>
 <style>
 
 /*form{*/
