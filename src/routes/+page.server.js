@@ -22,6 +22,13 @@ export async function load() {
 					}
 				}
 				title
+				thumbnail {
+					werkvormThumbnailWerkvorm {
+						thumbnail {
+							url
+						}
+					}
+				}
 			}
 		}
 	`
