@@ -45,7 +45,7 @@
 				<path d="M24.4672 39.9141C24.4672 39.0856 23.7956 38.4141 22.9672 38.4141C22.1387 38.4141 21.4672 39.0856 21.4672 39.9141H24.4672ZM24.4672 45.8928V39.9141H21.4672V45.8928H24.4672Z" fill="white"/>
 				<path d="M44.3964 39.9141C44.3964 39.0856 43.7248 38.4141 42.8964 38.4141C42.0679 38.4141 41.3964 39.0856 41.3964 39.9141H44.3964ZM44.3964 45.8928V39.9141H41.3964V45.8928H44.3964Z" fill="white"/>
 				</svg>
-			<button>Werkvorm uploaden</button>
+			<button><a href="/upload">Werkvorm uploaden</a></button>
 			<Button></Button>
 		</nav>
 
@@ -282,6 +282,7 @@ margin: 3em;
 		border: 4px solid #66E5BF;
 		width: 10em;
 		margin-top: 1em;
+		text-align: center;
 	}
 
 	@media (min-width: 650px) {
