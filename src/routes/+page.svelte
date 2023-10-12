@@ -125,7 +125,7 @@
 		flex-direction: column;
 		padding: 0 2rem;
 		width: 100%;
-		line-height: 4em;
+		
 	}
 
 	h2,h3{
@@ -133,6 +133,7 @@
 	}
 	p{
 		font-size: 25px;
+		line-height:3em;
 	}
 
 	.nav-and-intro {
@@ -180,6 +181,7 @@ margin: 3em;
 	}
 	ul, li{
 		font-size: 20px;
+		line-height: 3em;
 	}
 
 	.filter-menu ul > li{
@@ -276,6 +278,8 @@ margin: 3em;
 
 	.tag{
 		border: 4px solid #66E5BF;
+		width: 10em;
+		margin-top: 1em;
 	}
 
 	@media (min-width: 650px) {
