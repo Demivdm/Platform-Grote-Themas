@@ -10,6 +10,12 @@
 		console.log(werkvorm.title)
 	}) // Gebruik maken van variabelen in string
 	// `test ${variable}`
+
+	let activeFilterButton = false;
+
+	function toggleOpen(){
+		activeFilterButton = !activeFilterButton;
+	}
 	
 </script>
 
@@ -52,41 +58,67 @@
 	</section>
 
 	<section class="filter-menu">
-	<ul class="focus">
-		<li>Focus</li>
-		<li>Ik</li>
-		<li>De ander</li>
-		<li>De wereld</li>
+	<ul  class="focus">
+		<button  class:active={activeFilterButton} on:click={toggleOpen} class="focus-button">Focus</button>
+		<div class:active={activeFilterButton}>
+			<div class="drop-down-focus">
+				<li ><input type="checkbox">Ik</li>
+			<li><input type="checkbox">De ander</li>
+			<li><input type="checkbox">De wereld</li>
+			</div>
+			
+		</div>
+		
 	</ul>
 	<ul class="doel">
-		<li>Doel</li>
-		<li>Professioneel id ontwikkelen</li>
-		<li>Persoonlijke interesse aanspreken</li>
-		<li>Kennis opdoen</li>
-		<li>Richtlijnen toepassen</li>
-		<li>Golden oldies verrijken</li>
-		<li>Tools toepassen</li>
-		<li>Dialoog voeren</li>
-		<li>Praktijk betrekken</li>
+		<button  class:active={activeFilterButton} on:click={toggleOpen} class="focus-button">Doel</button>
+		<div class:active={activeFilterButton}>
+			<div class="drop-down-doel">
+				<li><input type="checkbox">Professioneel id ontwikkelen</li>
+		<li><input type="checkbox">Persoonlijke interesse aanspreken</li>
+		<li><input type="checkbox">Kennis opdoen</li>
+		<li><input type="checkbox">Richtlijnen toepassen</li>
+		<li><input type="checkbox">Golden oldies verrijken</li>
+		<li><input type="checkbox">Tools toepassen</li>
+		<li><input type="checkbox">Dialoog voeren</li>
+		<li><input type="checkbox">Praktijk betrekken</li>
+			</div>
+			
+		</div>
+		
+		
 	</ul>
 	<ul class="onderwerp">
-		<li>Onderwerp</li>
-		<li>Duurzaamheid</li>
-		<li>Diversiteit</li>
-		<li>Digitalisering</li>
-		<li>Democratie</li>
+		<button  class:active={activeFilterButton} on:click={toggleOpen} class="focus-button">Onderwerp</button>
+		<div class:active={activeFilterButton}>
+			<div class="drop-down-onderwerp">
+				<li><input type="checkbox">Duurzaamheid</li>
+		<li><input type="checkbox">Diversiteit</li>
+		<li><input type="checkbox">Digitalisering</li>
+		<li><input type="checkbox">Democratie</li>
+			</div>
+			
+		</div>
+		
 	</ul>
 	<ul class="fase">
-		<li>Fase</li>
-		<li>Opwarmer</li>
-		<li>Verbreden</li>
-		<li>Verdiepen</li>
-		<li>Uitwisselen</li>
+		<button  class:active={activeFilterButton} on:click={toggleOpen} class="focus-button">Fase</button>
+		<div class:active={activeFilterButton}>
+			<div class="drop-down-fase">
+				<li><input type="checkbox">Opwarmer</li>
+			<li><input type="checkbox">Verbreden</li>
+			<li><input type="checkbox">Verdiepen</li>
+			<li><input type="checkbox">Uitwisselen</li>
+			</div>
+			
+		</div>
+
+		
 	</ul> 
 	<!-- zoekbalk -->
 	<div class="input-search">
 		<input type="search">
-	<button>Zoek</button>
+	<button class="search-button">Zoek</button>
 	</div>
 	 
 	</section>
@@ -97,7 +129,7 @@
 			<img src="https://ralfvanveen.com/wp-content/uploads/2021/06/Placeholder-_-Begrippenlijst.svg" alt="">
 			<article>
 				<h3>{werkvorm.title}</h3>
-			<p>{werkvorm.beschrijving}</p>
+			<p class="text-overflow">{werkvorm.beschrijving}</p>
 			<div class="info-buttons">
 					
 				<a href="/{werkvorm.link}"><svg width="50" height="53" viewBox="0 0 23 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -175,79 +207,142 @@
 	}
 
 	.filter-menu{
-		display: grid;
-grid-template-columns: repeat(6, 1fr);
-gap: 5em;
-margin: 3em;
+display: flex;
+padding-left: 1em;
+justify-content: space-between;
+
 		
 	}
 	ul, li{
 		font-size: 20px;
 		line-height: 3em;
+		
+	}
+	ul button{
+		visibility: visible;
 	}
 
-	.filter-menu ul > li{
-		padding: .5em 1em .5em 1em;
-	}
+
+	ul li input[type="checkbox"] {
+		margin-right: 1em;
+		margin-left: .5em;
+}
 
 
 	li:hover{
 		background-color: #1e1649;
 	}
 
-	.focus{
-		grid-area: 1 / 1 / 2 / 2;
+	.focus {
+		visibility: hidden;
 	}
-
-	.focus li:first-of-type{
-		border: 4px solid #66E5BF;
+	
+	.doel {
+		visibility: hidden;
 	}
-
-	.doel{
-		grid-area: 1 / 2 / 2 / 3;
-	}
-	.doel li:first-of-type{
-		border: 4px solid var(--color-hva-pink);
-	}
-
 	.onderwerp{
-		grid-area: 1 / 3 / 2 / 4;
-	}
-	.onderwerp li:first-of-type{
-		border: 4px solid #AEA4E5;
-	}
-	.fase{
-		grid-area: 1 / 4 / 2 / 5;
-	}
-	.fase li:first-of-type{
-		border: 4px solid #FEF84C;
+		visibility: hidden;
 	}
 
-	.input-search{
-		grid-area: 1 / 5 / 2 / 7;
-		
-		height: 4em;
+	.fase{
+		visibility: hidden;
 	}
+
+	.focus button{
+		border: 4px solid #66E5BF;
+		text-align: center;
+		padding: 1em 2em 1em 2em;
+		font-size: 1em;
+	}
+	.doel button{
+		border: 4px solid #F25379;
+		text-align: center;
+		padding: 1em 2em 1em 2em;
+		font-size: 1em;
+	}
+	.onderwerp button{
+		border: 4px solid #AEA4E5;
+		text-align: center;
+		padding: 1em 2em 1em 2em;
+		font-size: 1em;
+	}
+	.fase button{
+		border: 4px solid #FEF84C;
+		text-align: center;
+		padding: 1em 2em 1em 2em;
+		font-size: 1em;
+	}
+
+	
+	.active{
+		visibility: visible;
+		background-color: #FEF84C;
+		color: black;
+		
+	}
+	
+
+	.drop-down-focus{
+	position: absolute;
+	background-color: #66E5BF;
+	padding: 1em 2em 1em .5em;
+}
+.drop-down-doel{
+	position: absolute;
+	background-color: #F25379;
+	padding: 1em 2em 1em .5em;
+}
+.drop-down-onderwerp{
+	position: absolute;
+	background-color: #AEA4E5;
+	padding: 1em 2em 1em .5em;
+}
+.drop-down-fase{
+	position: absolute;
+	background-color: #FEF84C;
+	padding: 1em 2em 1em .5em;
+}
+	
+
+		
 
 	.filter-menu input[type="search"] {
   width: 20em;
   padding: 1em;
   border: 10px solid var(--color-hva-navy);
+
   
 }
 
-.filter-menu button {
+.search-button {
   font-size: 1.5em;
   background-color: var(--color-hva-pink);
-  padding: .5em;
+  padding: .5em 2em .5em 2em;
+  margin-left: 1em;
   
+}
+
+
+.werkvormen{
+	margin-top: 5em;
 }
 
 	.werkvorm{
 		background-color: #1e1649;
 		padding: 2em;
 		margin: 1em;
+		max-width: 40vw;
+    flex-wrap: wrap;
 
+		
+	}
+
+	.text-overflow{
+		position: relative;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		width: 30vw;
 		
 	}
 
@@ -331,4 +426,6 @@ margin: 3em;
 			
 		}
 	}
+
+	@media (min-width: 1300px) {}
 </style>
